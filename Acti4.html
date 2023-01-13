@@ -1,0 +1,124 @@
+<html>
+  <head>
+    <title>Implement Chart Js</title>
+  </head>
+  <style>
+    body {
+      background-color: #F8F8FF;
+   
+    }
+    div {
+      display: flex; 
+      justify-content: center;
+    }
+    div > div {
+      width: 70%;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    iframe {
+      border-radius: 10px;
+      box-shadow: 0 10px 30px grey;
+      border: none;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 50px;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-style:Tahoma;
+      color: black;
+     
+    }
+    li {
+      list-style: none;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    b {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    ul {
+      text-align: center;
+    }
+  </style>
+  <body>
+    <h1>School Sports Event </h1>
+    <br>
+    <br>
+    <div>
+      <div>
+        <canvas id="myChart"></canvas>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      for (var a=[],i=0;i<15000;++i) a[i]=i;
+
+      function shuffle(array) {
+        var tmp, current, top = array.length;
+        if(top) while(--top) {
+          current = Math.floor(Math.random() * (top + 1));
+          tmp = array[current];
+          array[current] = array[top];
+          array[top] = tmp;
+        }
+        return array;
+      }
+      a = shuffle(a);
+
+      for (var b=[],j=0;j<15000;++j) b[j]=j;
+
+      function shuffle2(array) {
+        var tmp, current, top = array.length;
+        if(top) while(--top) {
+          current = Math.floor(Math.random() * (top + 1));
+          tmp = array[current];
+          array[current] = array[top];
+          array[top] = tmp;
+        }
+        return array;
+      }
+      b = shuffle2(b);
+
+      for (var c=[],x=0;x<15000;++x) c[x]=x;
+
+      function shuffle3(array) {
+        var tmp, current, top = array.length;
+        if(top) while(--top) {
+          current = Math.floor(Math.random() * (top + 1));
+          tmp = array[current];
+          array[current] = array[top];
+          array[top] = tmp;
+        }
+        return array;
+      }
+      c = shuffle3(c);
+
+      const ctx = document.getElementById('myChart');
+
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ["Basketball", "Soccer", "Volleyball", "Softball", "Tennis"],
+          datasets: [
+            {
+              label: 'Total Visitors',
+              data: a,
+              borderWidth: 1
+            },
+           
+        ]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+
+    </script>
+    
+  </body>
+</html>
